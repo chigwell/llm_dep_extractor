@@ -73,7 +73,7 @@ def extract_required_pip_packages(code_text: str, llm: ChatLLM7, max_packages: i
             seen.add(raw)
             result.append(raw)
 
-    if len(result) < max_packages:
-        raise RuntimeError("Not enough unique, valid package names extracted.")
+    #if len(result) < max_packages:
+    #    raise RuntimeError("Not enough unique, valid package names extracted.")
 
     return result[:max_packages]

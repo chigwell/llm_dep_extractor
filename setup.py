@@ -12,7 +12,7 @@ except FileNotFoundError:
 
 setup(
     name='llm_dep_extractor',
-    version='2025.9.101648',
+    version='2025.9.121647',
     author='Eugene Evstafev',
     author_email='hi@eugene.plus',
     description='Minimal Python package: llm_dep_extractor',
