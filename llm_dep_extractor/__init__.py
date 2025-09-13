@@ -62,8 +62,6 @@ def extract_required_pip_packages(code_text: str, llm: ChatLLM7, max_packages: i
         raise RuntimeError("Name generation failed via llmatch/ChatLLM7.")
 
     extracted: List[str] = response.get("extracted_data") or []
-    if len(extracted) < max_packages:
-        raise RuntimeError("Insufficient <name> elements extracted from LLM response.")
 
     # deduplicate while preserving order
     seen = set()
@@ -73,7 +71,5 @@ def extract_required_pip_packages(code_text: str, llm: ChatLLM7, max_packages: i
             seen.add(raw)
             result.append(raw)
 
-    #if len(result) < max_packages:
-    #    raise RuntimeError("Not enough unique, valid package names extracted.")
 
     return result[:max_packages]
